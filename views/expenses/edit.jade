@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+    h1.
+        Expense ID #{expense._id}
+    form(action='/expenses/#{expense._id}/edit',method='post',name='updateexpense',enctype='application/x-www-form-urlencoded')
+        p Name: 
+            input#inputName(type='text', value='#{expense.name}', name='name')
+        p Category: 
+            input#inputCategory(type='text', value='#{expense.category}', name='category')
+        p Date: 
+            input#inputDate(type='date', value='#{expensedate}', name='date')
+        p Amount: 
+            input#inputAmount(type='number', value='#{expense.number}', name='amount' )
+        p 
+            input(type='hidden',value='PUT',name='_method')
+        p 
+            button#btnSubmit(type='submit').
+                Update
+
+

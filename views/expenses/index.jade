@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+    h1.
+         #{title}
+    ul
+        - each expense, i in expenses
+            li
+                = expense.name
+                = expense.category
+                = expense.date
+                = expense.amount
+                = expense._id
+                form(action='/expenses/#{expense._id}/edit',method='post',enctype='application/x-www-form-urlencoded')
+                    input(type='hidden',value='DELETE',name='_method')
+                    button(type='submit').
+                        Delete
+                p 
+                    a(href='/expenses/#{expense._id}/edit') Edit
+                p
+                    a(href='/expenses/#{expense._id}') Show
+

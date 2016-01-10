@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+    h1.
+        #{title}
+    form#formAddExpense(name="addexpense",method="post",action="/expenses")
+        p Name: 
+            input#inputName(type="text", placeholder="ex. Albert Heijn", name="name")
+        p Category:
+            input#inputCategory(type="text", placeholder="ex. Grocery", name="category")
+        p Date: 
+            input#inputDate(type="date", name="date")
+        p Amount: 
+            input#inputAmount(type="number", placeholder="ex. 8.29", name="date")
+        p
+            button#btnSubmit(type="submit") submit
+
