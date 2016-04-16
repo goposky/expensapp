@@ -1,6 +1,6 @@
-expensapp
+moneymon
 =========
-expensapp is a node.js webapp used to store and manage personal expenses.
+moneymon is an angular.js, node.js app used to store and manage personal fincance.
 It is work in progress.
 Initial build based on https://github.com/kacole2/express-node-mongo-skeleton
 
