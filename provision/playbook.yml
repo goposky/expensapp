@@ -1,0 +1,15 @@
+- hosts: all
+  sudo: true
+  tasks:
+    - name: install apache
+      yum: name={{item}} state=installed
+      with_items:
+        - httpd
+    - name: create symlink
+      file: src=/vagrant/appui dest=/var/www/html/appui state=link
+      notify: apache restart
+
+  handlers:
+    - name: apache restart
+      service: name=httpd state=restarted
+
