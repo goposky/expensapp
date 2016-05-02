@@ -1,4 +1,8 @@
 - hosts: all
+  roles: 
+    - setup
+    - display
+
   sudo: true
   tasks:
     - name: install apache
